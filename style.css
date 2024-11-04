@@ -23,15 +23,19 @@ body {
 
 .profile {
     text-align: center;
+    margin: 20px; 
 }
 
 .profile img {
     width: 120px;
     border-radius: 50%;
+    max-width: 100%; 
+    height: auto;    
 }
 
 .links {
-    margin-top: 20px;
+    text-align: center; 
+    margin: 20px 0;    
 }
 
 .link-button {
@@ -62,4 +66,20 @@ body {
 .footer {
     margin-top: 20px;
     font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    body {
+        height: auto; 
+        padding: 10px; 
+    }
+
+    .profile img {
+        width: 80px; 
+    }
+
+    h1 {
+        font-size: 24px; 
+    }
 }
