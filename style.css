@@ -11,7 +11,7 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,6 +41,7 @@ body {
 .link-button {
     background-color: var(--button-background);
     color: var(--button-text-color);
+    font-family: "Doto", sans-serif;
     padding: 15px 30px;
     margin: 10px 0;
     text-align: left;
@@ -69,6 +70,10 @@ body {
     font-size: 14px;
 }
 
+h1 {
+    font-family: "Doto", sans-serif;
+}
+
 /* Responsive Styles */
 @media (max-width: 600px) {
     body {
@@ -84,3 +89,31 @@ body {
         font-size: 24px; 
     }
 }
+
+/* doto-regular */
+@font-face {
+    font-display: swap;
+    font-family: 'Doto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/Fonts/doto-v1-latin-regular.woff2') format('woff2');
+}
+
+/* source-code-pro-regular */
+@font-face {
+    font-display: swap;
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/Fonts/source-code-pro-v23-latin-regular.woff2') format('woff2');
+}
+
+/* press-start-2p-regular */
+@font-face {
+    font-display: swap;
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/Fonts/press-start-2p-v15-latin-regular.woff2') format('woff2');
+}
+
