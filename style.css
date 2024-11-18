@@ -29,8 +29,7 @@ body {
 }
 
 .profile img {
-    width: 120px;
-    border-radius: 50%;
+    width: 80px;  /* Angepasste Größe für kleinere Bildschirme */
     max-width: 100%;
     height: auto;
 }
@@ -103,7 +102,8 @@ body {
     }
 
     .profile img {
-        width: 80px;
+        width: 80px;  /* Kleinere Größe für Handys */
+        margin-top: 20px;  /* Etwas Abstand nach oben */
     }
 
     .profile h1 {
