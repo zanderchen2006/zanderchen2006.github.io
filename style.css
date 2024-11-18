@@ -33,6 +33,7 @@ body {
     height: 120px;  /* Gleiche Höhe wie die Breite */
     border-radius: 50%;
     max-width: 100%;
+    margin-top: 50px;
 }
 
 .profile h1 {
