@@ -29,9 +29,10 @@ body {
 }
 
 .profile img {
-    width: 80px;  /* Angepasste Größe für kleinere Bildschirme */
+    width: 120px;
+    height: 120px;  /* Gleiche Höhe wie die Breite */
+    border-radius: 50%;
     max-width: 100%;
-    height: auto;
 }
 
 .profile h1 {
@@ -103,6 +104,7 @@ body {
 
     .profile img {
         width: 80px;  /* Kleinere Größe für Handys */
+        height: 80px;
         margin-top: 20px;  /* Etwas Abstand nach oben */
     }
 
