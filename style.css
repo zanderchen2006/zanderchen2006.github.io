@@ -1,17 +1,17 @@
 /* Website by Tim Zander @ 31.10.2024 */
 
 :root {
-    --background-color: #2b2b2b;
-    --text-color: #ddd;
-    --button-background: #171717;
-    --button-text-color: #C7F900;
-    --button-hover-background: #373737;
+    --background-color: #b0af90; /* Entspricht der Vorlage */
+    --text-color: #000000; /* Schwarz für Text */
+    --accent-color: #ede9de; /* Helles Beige */
+    --font-primary: 'Poppins', sans-serif; /* Ersatz für Neue Montreal */
+    --font-secondary: 'Castoro', serif; /* Beschreibung in Castoro */
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: "Arial", sans-serif;
+    font-family: var(--font-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,101 +19,256 @@ body {
     height: 100vh;
     margin: 0;
     overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .profile {
     text-align: center;
-    margin: 20px; 
+    margin: 20px;
 }
 
 .profile img {
     width: 120px;
     border-radius: 50%;
-    max-width: 100%; 
-    height: auto;    
+    max-width: 100%;
+    height: auto;
+}
+
+.profile h1 {
+    font-family: var(--font-primary); /* Poppins */
+    font-weight: 700; /* Bold-Schrift */
+    font-style: normal; /* Kein Kursiv */
+    font-size: 3rem; /* Überschriftengröße */
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-family: var(--font-secondary); /* Castoro */
+    font-weight: 400; /* Standardgewicht */
+    font-style: normal; /* Kein Kursiv */
+    font-size: 1.2rem; /* Beschreibungstext */
+    line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+    margin: 0;
+    color: var(--text-color); /* Textfarbe */
 }
 
 .links {
-    text-align: center; 
-    margin: 20px 0;    
+    text-align: center;
+    margin: 20px 0;
 }
 
 .link-button {
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-    font-family: "Doto", sans-serif;
+    background-color: var(--text-color);
+    color: var(--accent-color);
+    font-family: var(--font-primary);
     padding: 15px 30px;
     margin: 10px 0;
-    text-align: left;
     text-decoration: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 200px;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 1.5;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .link-button:hover {
-    background-color: var(--button-hover-background);
+    background-color: var(--accent-color);
+    color: var(--text-color);
     transform: scale(1.03);
+}
+
+.link-button:hover i {
+    color: var(--text-color); /* Icon passt sich beim Hover an */
 }
 
 .link-button i {
     margin-right: 10px;
-    color: var(--button-text-color);
+    color: var(--accent-color); /* Standardfarbe für Icons */
 }
 
 .footer {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 0.8rem;
+    font-family: var(--font-primary); /* Footer in Castoro */
 }
 
-h1 {
-    font-family: "Doto", sans-serif;
-}
-
-/* Responsive Styles */
 @media (max-width: 600px) {
     body {
-        height: auto; 
-        padding: 10px; 
+        padding: 10px;
     }
 
     .profile img {
-        width: 80px; 
+        width: 80px;
     }
 
-    h1 {
-        font-size: 24px; 
+    .profile h1 {
+        font-size: 2rem;
     }
 }
 
-/* doto-regular */
+/* poppins-100 - latin */
 @font-face {
-    font-display: swap;
-    font-family: 'Doto';
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    src: url('/Fonts/Poppins/poppins-v21-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-100italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 100;
+    src: url('/Fonts/Poppins/poppins-v21-latin-100italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-200 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/Fonts/Poppins/poppins-v21-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-200italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 200;
+    src: url('/Fonts/Poppins/poppins-v21-latin-200italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/Fonts/Poppins/poppins-v21-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-300italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 300;
+    src: url('/Fonts/Poppins/poppins-v21-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    src: url('/Fonts/doto-v1-latin-regular.woff2') format('woff2');
+    src: url('/Fonts/Poppins/poppins-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/Fonts/Poppins/poppins-v21-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-500 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/Fonts/Poppins/poppins-v21-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-500italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 500;
+    src: url('/Fonts/Poppins/poppins-v21-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/Fonts/Poppins/poppins-v21-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 600;
+    src: url('/Fonts/Poppins/poppins-v21-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/Fonts/Poppins/poppins-v21-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-700italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    src: url('/Fonts/Poppins/poppins-v21-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-800 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/Fonts/Poppins/poppins-v21-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-800italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 800;
+    src: url('/Fonts/Poppins/poppins-v21-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-900 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/Fonts/Poppins/poppins-v21-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-900italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 900;
+    src: url('/Fonts/Poppins/poppins-v21-latin-900italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* source-code-pro-regular */
+/* castoro-regular - latin */
 @font-face {
-    font-display: swap;
-    font-family: 'Source Code Pro';
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Castoro';
     font-style: normal;
     font-weight: 400;
-    src: url('/Fonts/source-code-pro-v23-latin-regular.woff2') format('woff2');
+    src: url('/Fonts/Castoro/castoro-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
-/* press-start-2p-regular */
+/* castoro-italic - latin */
 @font-face {
-    font-display: swap;
-    font-family: 'Press Start 2P';
-    font-style: normal;
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Castoro';
+    font-style: italic;
     font-weight: 400;
-    src: url('/Fonts/press-start-2p-v15-latin-regular.woff2') format('woff2');
+    src: url('/Fonts/Castoro/castoro-v19-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
