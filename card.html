@@ -3,10 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitenkarte Download</title>
-    <meta http-equiv="refresh" content="0; url=visitenkarte.vcf">
+    <title>Digitale Visitenkarte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: white;
+            margin: 0;
+        }
+        .card {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            max-width: 350px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid rgb(103,234,0);
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: rgb(103,234,0);
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <p>Falls der Download nicht automatisch startet, <a href="visitenkarte.vcf" download="Max_Mustermann.vcf">hier klicken</a>.</p>
+<div class="card">
+    <img src="https://10m.de/img/team/doetsch.jpg" alt="Profilbild" class="profile-img">
+    <div class="contact-info">
+        <h2>Norbert Doetsch</h2>
+        <p>Email: <a href="mailto:norbert.doetsch@10m.de" style="color:rgb(103,234,0);">norbert.doetsch@10m.de</a></p>
+        <p>Mobil: <a href="tel:+4915174219737" style="color:rgb(103,234,0);">+49 151 74219737</a></p>
+        <p>Telefon: <a href="tel:+4926259589986" style="color:rgb(103,234,0);">+49 2625 9589986</a></p>
+        <p>Webseite: <a href="https://www.10m.de" target="_blank" style="color:rgb(103,234,0);">www.10m.de</a></p>
+        <p>Firma: 10m GmbH</p>
+        <p>Adresse:</p>
+        <p>Mayenerstr.<br>56220 Bassenheim<br>Deutschland</p>
+    </div>
+    <a id="vcard-link" class="btn" download="NorbertDoetsch.vcf">Kontakt speichern</a>
+</div>
+
+<script>
+    // VCF-Daten generieren
+    const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Norbert Doetsch
+ORG:10m GmbH
+TITLE:Geschäftsführer
+EMAIL:norbert.doetsch@10m.de
+TEL;TYPE=mobile:+49 151 74219737
+TEL;TYPE=work:+49 2625 9589986
+URL:https://www.10m.de
+ADR;TYPE=work:;;Mayenerstr.;Bassenheim;;56220;Deutschland
+END:VCARD`;
+
+    // Blob erstellen und URL setzen
+    const blob = new Blob([vcardData], { type: 'text/vcard' });
+    const vcardUrl = URL.createObjectURL(blob);
+    document.getElementById('vcard-link').setAttribute('href', vcardUrl);
+</script>
 </body>
 </html>
